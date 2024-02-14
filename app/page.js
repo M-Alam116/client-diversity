@@ -1,9 +1,11 @@
 "use client";
 
+import HeroSection from "./components/home/HeroSection";
+
 export default function Home() {
   return (
     <div className="container opacity-90">
-      <h1>home page</h1>
+      <HeroSection />
     </div>
   );
 }
