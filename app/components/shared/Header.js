@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { MdOutlineLightMode } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Header = () => {
   return (
@@ -23,7 +23,9 @@ const Header = () => {
           </Link>
         </ul>
       </nav>
-      <MdOutlineLightMode className="absolute top-[1rem] right-[1rem] md:right-0 text-[1.5rem] text-black" />
+      <div className="absolute top-[1rem] right-[1rem] md:right-0 cursor-pointer">
+        <ThemeSwitch />
+      </div>
     </div>
   );
 };
