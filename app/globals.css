@@ -28,3 +28,7 @@
   );
   background-size: 15px 15px;
 }
+
+.row-title {
+  font-size: 15px !important;
+}
