@@ -6,6 +6,7 @@ import ClientDistribution from "./components/home/ClientDistribution";
 import ClientDiversity from "./components/home/ClientDiversity";
 import ClientResources from "./components/home/ClientResources";
 import SwitchClients from "./components/home/SwitchClients";
+import Resources from "./components/home/Resources";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ClientDiversity />
       <ClientResources />
       <SwitchClients />
+      <Resources />
     </div>
   );
 }
