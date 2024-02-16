@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import ThemeSwitch from "./ThemeSwitch";
+import { useCustomTheme } from "../home/GetTheme";
 
 const Header = () => {
   const [click, setClick] = useState(false);
@@ -11,11 +12,13 @@ const Header = () => {
   const handleClick = () => {
     setClick(!click);
   };
-
+  const resolvedTheme = useCustomTheme();
   return (
     <div className="container relative">
       <RxHamburgerMenu
-        className="absolute top-[1rem] left-[1rem] md:left-0 text-[2rem] text-black md:hidden"
+        className={`absolute top-[1rem] left-[1rem] md:left-0 text-[2rem] md:hidden ${
+          resolvedTheme === "light" ? "text-black" : "text-white"
+        }`}
         onClick={handleClick}
       />
       <nav
