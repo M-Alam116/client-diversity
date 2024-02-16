@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 
-export const Providers = ({ children }) => {
+export function Providers ({ children }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
