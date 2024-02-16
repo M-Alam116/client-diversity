@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div className="container relative">
       <RxHamburgerMenu
-        className={`absolute top-[1rem] left-[1rem] md:left-0 text-[2rem] md:hidden ${
+        className={`absolute top-[1rem] left-[1rem] md:left-0 text-[2rem] md:hidden z-20 ${
           resolvedTheme === "light" ? "text-black" : "text-white"
         }`}
         onClick={handleClick}
@@ -41,7 +41,7 @@ const Header = () => {
           </Link>
         </ul>
       </nav>
-      <div className="absolute top-[1rem] right-[1rem] md:right-0 cursor-pointer">
+      <div className="absolute top-[1rem] right-[1rem] md:right-0 cursor-pointer z-20">
         <ThemeSwitch />
       </div>
     </div>
