@@ -17,7 +17,10 @@ export default function Home() {
       </Head>
       <div className="container">
         <HeroSection />
-        <LogoSection />
+      </div>
+      <LogoSection />
+
+      <div className="container">
         <ClientDistribution />
         <ClientDiversity />
         <ClientResources />
