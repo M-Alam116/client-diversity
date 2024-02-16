@@ -5,10 +5,13 @@ import { AiFillInfoCircle } from "react-icons/ai";
 import Bar from "./Bar";
 import { sigmaData, migaData, ratedData } from "@/app/data/ProgressBarData";
 import Link from "next/link";
+import { useCustomTheme } from "./GetTheme";
 
 const ConsensusClients = () => {
   const [activeRadio, setActiveRadio] = useState("sigma");
   const [currentData, setCurrentData] = useState(sigmaData);
+
+  const resolvedTheme = useCustomTheme();
 
   useEffect(() => {
     handleToggle(activeRadio);
@@ -34,7 +37,13 @@ const ConsensusClients = () => {
       <h1 className="text-[26px] font-[600] opacity-90 text-center mb-[2rem]">
         Consensus Clients
       </h1>
-      <div className="bg-[#cff4fc] flex items-center gap-[10px] py-[9px] px-[15px] rounded-[8px] my-[2rem]">
+      <div
+        className={`flex items-center gap-[10px] py-[9px] px-[15px] rounded-[8px] my-[2rem] ${
+          resolvedTheme === "light"
+            ? "bg-[#cff4fc] text-black"
+            : "bg-[#032830] text-cyan-300"
+        }`}
+      >
         <AiFillInfoCircle className="w-[26px] h-[26px] opacity-80" />
         <p className="text-[16px] font-[400] opacity-90">
           Client diversity has improved!
@@ -101,7 +110,13 @@ const ConsensusClients = () => {
         </p>
       </div>
 
-      <div className="opacity-80 bg-[#b6e7f1] border-[1px] border-cyan-500 rounded-[8px] flex flex-col items-center py-[10px] px-[20px]">
+      <div
+        className={`opacity-80 border-[1px] border-cyan-500 rounded-[8px] flex flex-col items-center py-[10px] px-[20px] ${
+          resolvedTheme === "light"
+            ? "bg-[#b6e7f1] text-black"
+            : "bg-[#032830] text-cyan-300"
+        }`}
+      >
         <h2 className="text-[16px] font-[800]">
           Data source (
           <Link href="/methodology" className="underline">

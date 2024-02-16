@@ -1,7 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import { useCustomTheme } from "./GetTheme";
 
 const Resources = () => {
+  const resolvedTheme = useCustomTheme();
+  const listColor = resolvedTheme === "light" ? "black" : "white";
+
   return (
     <div className="py-[7rem] w-full lg:w-[80%] mx-auto">
       <h1 className="text-[32px] md:text-[40px] leading-[35px] font-[800] opacity-90 text-center mb-[3rem]">
@@ -17,7 +21,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">
                 Awesome Ethereum Staking Resources
               </li>
@@ -27,7 +33,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Stereum</li>
             </Link>
             <Link
@@ -35,7 +43,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Eth-Docker</li>
             </Link>
             <Link
@@ -43,7 +53,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Vouch</li>
             </Link>
             <Link
@@ -51,7 +63,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Keymanager APIs</li>
             </Link>
             <Link
@@ -59,7 +73,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Kotal</li>
             </Link>
           </ul>
@@ -73,7 +89,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">
                 Staking Pool Client Diversity
               </li>
@@ -83,7 +101,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Miga Labs Dashboard</li>
             </Link>
             <Link
@@ -91,7 +111,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Chainsafe Nodewatch</li>
             </Link>
             <Link
@@ -99,7 +121,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">
                 Proposer Diversity Data
               </li>
@@ -109,7 +133,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">
                 Rated.Network Validator Ratings
               </li>
@@ -119,7 +145,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">
                 Financial Risk Per Consensus Client
               </li>
@@ -135,7 +163,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[7px] h-[7px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">Client Fingerprinting</li>
             </Link>
             <Link
@@ -143,7 +173,9 @@ const Resources = () => {
               target="_blank"
               className="flex items-center gap-[10px]"
             >
-              <div className="w-[7px] h-[7px] rounded-full bg-black"></div>
+              <div
+                className={`w-[8px] h-[8px] rounded-full bg-${listColor}`}
+              ></div>
               <li className="text-blue-600 underline">
                 EIP-3076: Slashing Protection Interchange Format
               </li>

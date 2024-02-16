@@ -7,7 +7,7 @@ export default function Methodology() {
     <div className="container opacity-90">
       <div className="w-full sm:w-[65%] flex-col mx-auto py-[4rem]">
         <div className="">
-          <h1 className="text-[28px] md:text-[38px] font-[700] text-center mb-[4rem]">
+          <h1 className="text-[28px] md:text-[38px] font-[700] text-center mb-[4rem] mt-[3rem] md:mt-0">
             Data Methodology
           </h1>
           <p className="">

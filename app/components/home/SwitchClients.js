@@ -1,9 +1,15 @@
 import Link from "next/link";
 import React from "react";
+import { useCustomTheme } from "./GetTheme";
 
 const SwitchClients = () => {
+  const resolvedTheme = useCustomTheme();
+
   return (
-    <div className="w-full lg:w-[50%] flex flex-col justify-center items-center mx-auto gap-[1rem]">
+    <div
+      className="w-full lg:w-[50%] flex flex-col justify-center items-center mx-auto gap-[1rem] pt-[3rem]"
+      id="switch"
+    >
       <h1 className="text-[32px] md:text-[40px] leading-[35px] font-[800] opacity-90 text-center">
         Switch Clients
       </h1>
@@ -23,7 +29,13 @@ const SwitchClients = () => {
         href="https://github.com/etheralpha/clientdiversity-org"
         target="_blank"
       >
-        <button className="text-[14px] font-[400] border border-black px-[1.5rem] py-[6px] rounded-[5px] w-fit">
+        <button
+          className={`text-[14px] font-[400] border px-[1.5rem] py-[6px] rounded-[5px] w-fit ${
+            resolvedTheme === "light"
+              ? "border-black text-black"
+              : "border-white text-white"
+          }`}
+        >
           Submit guide
         </button>
       </Link>
@@ -58,7 +70,7 @@ const SwitchClients = () => {
         <label htmlFor="" className="w-fit p-[10px] border-r border-r-gray-300">
           To
         </label>
-        <select className="p-[12px] w-[90%] outline-none">
+        <select className="p-[12px] w-[95%] outline-none">
           <option value="">Choose</option>
           <option value="">Lighthouse</option>
           <option value="">Lodestar</option>
@@ -69,7 +81,13 @@ const SwitchClients = () => {
         </select>
       </div>
 
-      <button className="text-[18px] font-[500] bg-black px-[25px] py-[12px] text-white rounded-[5px] opacity-90 mt-[1rem]">
+      <button
+        className={`text-[18px] font-[500] px-[25px] py-[12px] rounded-[5px] opacity-90 mt-[1rem] ${
+          resolvedTheme === "light"
+            ? "bg-black text-white"
+            : "bg-white text-black"
+        }`}
+      >
         Search Guides
       </button>
     </div>

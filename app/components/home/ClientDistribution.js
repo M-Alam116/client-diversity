@@ -1,11 +1,17 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import ConsensusClients from "./ConsensusClients";
 import ExecutionClients from "./ExecutionClients";
+import { useCustomTheme } from "./GetTheme";
 
 const ClientDistribution = () => {
+  const resolvedTheme = useCustomTheme();
+
   return (
-    <div className="flex flex-col items-center py-[3rem] md:py-[7rem]">
+    <div
+      className="flex flex-col items-center py-[3rem] md:py-[7rem]"
+      id="distribution"
+    >
       <div className="flex flex-col items-center gap-[10px]">
         <h1 className="text-[32px] md:text-[40px] leading-[35px] font-[800] opacity-90 text-center">
           Client Distribution
@@ -14,7 +20,13 @@ const ClientDistribution = () => {
           href="https://www.rated.network/?network=mainnet&view=pool&timeWindow=1d&page=1&poolType=all"
           target="_blank"
         >
-          <button className="bg-black px-[15px] py-[8px] rounded-[8px] text-white text-[15px] opacity-90">
+          <button
+            className={`px-[15px] py-[8px] rounded-[8px] text-[15px] opacity-90 ${
+              resolvedTheme === "light"
+                ? "bg-black text-white"
+                : "bg-white text-black"
+            }`}
+          >
             View Staking Pool Diversity
           </button>
         </Link>

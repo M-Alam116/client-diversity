@@ -6,9 +6,11 @@ import Bar from "./Bar";
 import { Supermajority } from "@/app/data/ProgressBarData";
 import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
+import { useCustomTheme } from "./GetTheme";
 
 const ExecutionClients = () => {
   const [activeRadio, setActiveRadio] = useState(true);
+  const resolvedTheme = useCustomTheme();
 
   return (
     <div className="flex flex-col justify-between border-[1px] border-gray-300 rounded-[8px] w-full max-w-[450px] px-[2rem] py-[3rem]">
@@ -18,9 +20,15 @@ const ExecutionClients = () => {
         </h1>
         {activeRadio ? (
           <>
-            <div className="bg-[#f8d7da] flex items-center gap-[10px] py-[9px] px-[15px] rounded-[8px] my-[2rem]">
+            <div
+              className={`flex items-center gap-[10px] py-[9px] px-[15px] rounded-[8px] my-[2rem] ${
+                resolvedTheme === "light"
+                  ? "bg-[#f8d7da]  text-black"
+                  : "bg-[#2c0b0e] text-red-500"
+              }`}
+            >
               <IoIosWarning className="w-[26px] h-[26px] opacity-80" />
-              <p className="text-[16px] font-[400] opacity-90 text-center">
+              <p className="text-[16px] font-[400] opacity-90">
                 Geth has a supermajority, switch to a minority client!
               </p>
             </div>
@@ -93,7 +101,7 @@ const ExecutionClients = () => {
               <Link
                 href="https://paragraph.xyz/@ethstaker/new-clientdiversity-data"
                 target="_blank"
-                className="text-blue-600 text-[16px] font-[400] flex items-center gap-[5px]"
+                className="text-blue-600 text-[16px] font-[400] flex items-center gap-[5px] mb-[2rem]"
               >
                 <p className="underline">Read more</p>
                 <GoArrowRight />
@@ -102,7 +110,13 @@ const ExecutionClients = () => {
           </>
         )}
       </div>
-      <div className="opacity-80 bg-[#b6e7f1] border-[1px] border-cyan-500 rounded-[8px] flex flex-col items-center py-[10px] px-[20px]">
+      <div
+        className={`opacity-80 border-[1px] border-cyan-500 rounded-[8px] flex flex-col items-center py-[10px] px-[20px] ${
+          resolvedTheme === "light"
+            ? "bg-[#b6e7f1] text-black"
+            : "bg-[#032830] text-cyan-300"
+        }`}
+      >
         <h2 className="text-[16px] font-[800]">
           Data source (
           <Link href="/methodology" className="underline">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import Faq from "react-faq-component";
 import FaqContent from "./FaqContent";
+import { useCustomTheme } from "./GetTheme";
 
 const data = {
   rows: [
@@ -14,19 +15,28 @@ const data = {
   ],
 };
 
-const styles = {
-  rowTitleColor: "black",
-  rowContentColor: "blue",
-};
-
-const config = {
-  animate: true,
-  tabFocus: true,
-};
-
 const ClientDiversity = () => {
+  const resolvedTheme = useCustomTheme();
+  const bgColor = resolvedTheme === "light" ? "#ffffff" : "#121212";
+  const textColor = resolvedTheme === "light" ? "#000000" : "#ffffff";
+
+  const styles = {
+    rowTitleColor: textColor,
+    rowContentColor: textColor,
+    bgColor: bgColor,
+    arrowColor: textColor,
+  };
+
+  const config = {
+    animate: true,
+    tabFocus: true,
+  };
+
   return (
-    <div className="flex flex-col gap-[1.5rem] w-full lg:w-[85%] mx-auto py-[3rem]">
+    <div
+      className="flex flex-col gap-[1.5rem] w-full lg:w-[85%] mx-auto py-[3rem]"
+      id="diversity"
+    >
       <h1 className="text-[32px] md:text-[40px] leading-[35px] font-[800] opacity-90 text-center">
         Client Diversity Is <span className="underline">Not</span> Optional
       </h1>
