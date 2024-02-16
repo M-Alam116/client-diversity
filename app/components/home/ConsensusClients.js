@@ -149,7 +149,7 @@ const ConsensusClients = () => {
               name="progress"
               id="miga"
               value="miga"
-              checked={activeRadio === "miga"}
+              defaultchecked={activeRadio === "miga"}
             />
             <label htmlFor="mega" className="text-[15px] font-[500]">
               Miga Labs

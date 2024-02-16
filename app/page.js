@@ -7,17 +7,23 @@ import ClientDiversity from "./components/home/ClientDiversity";
 import ClientResources from "./components/home/ClientResources";
 import SwitchClients from "./components/home/SwitchClients";
 import Resources from "./components/home/Resources";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="container">
-      <HeroSection />
-      <LogoSection />
-      <ClientDistribution />
-      <ClientDiversity />
-      <ClientResources />
-      <SwitchClients />
-      <Resources />
-    </div>
+    <>
+      <Head>
+        <title>Client Diversity | Ethereum</title>
+      </Head>
+      <div className="container">
+        <HeroSection />
+        <LogoSection />
+        <ClientDistribution />
+        <ClientDiversity />
+        <ClientResources />
+        <SwitchClients />
+        <Resources />
+      </div>
+    </>
   );
 }

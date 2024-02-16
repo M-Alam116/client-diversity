@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
-import { Providers } from "./providers";
+import { Providers } from "./components/shared/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
